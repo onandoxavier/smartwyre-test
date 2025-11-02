@@ -14,10 +14,10 @@ public static class RebateModule
         services.AddSingleton<IRebateCalculator, FixedRateRebateCalculator>();
         services.AddSingleton<IRebateCalculator, AmountPerUomCalculator>();
 
-        // Factory que usa IEnumerable<IRebateCalculator>
+        // Factory that use IEnumerable<IRebateCalculator>
         services.AddSingleton<IRebateCalculatorFactory, RebateCalculatorFactory>();
 
-        // Serviço de aplicação
+        // application service
         services.AddScoped<IRebateService, RebateService>();
 
         return services;

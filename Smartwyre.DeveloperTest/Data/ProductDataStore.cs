@@ -5,6 +5,9 @@ namespace Smartwyre.DeveloperTest.Data;
 
 public class ProductDataStore
 {
+    /*
+     For testing purposes, I decided to keep the dataStore entity pattern and left some mock data.
+    */
     private readonly List<Product> _products = new()
     {
         new Product
@@ -45,5 +48,10 @@ public class ProductDataStore
     public Product GetProduct(string productIdentifier)
     {
         return _products.Find(p => p.Identifier == productIdentifier);
+    }
+
+    public List<Product> GetProducts()
+    {
+        return _products;
     }
 }

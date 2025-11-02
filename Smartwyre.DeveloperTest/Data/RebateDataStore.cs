@@ -5,6 +5,9 @@ namespace Smartwyre.DeveloperTest.Data;
 
 public class RebateDataStore
 {
+    /*
+     For testing purposes, I decided to keep the dataStore entity pattern and left some mock data.
+    */
     private readonly List<Rebate> _rebates = new()
     {
         new Rebate
@@ -30,6 +33,11 @@ public class RebateDataStore
     public Rebate GetRebate(string rebateIdentifier)
     {
         return _rebates.Find(r => r.Identifier == rebateIdentifier);
+    }
+
+    public List<Rebate> GetRebates()
+    {
+        return _rebates;
     }
 
     public void StoreCalculationResult(Rebate account, decimal rebateAmount)
