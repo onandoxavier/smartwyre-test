@@ -12,6 +12,6 @@ public class RebateCalculatorFactory : IRebateCalculatorFactory
     public RebateCalculatorFactory(IEnumerable<IRebateCalculator> calculators)
         => _map = calculators.ToDictionary(c => c.IncentiveType);
 
-    public IRebateCalculator? Get(IncentiveType type)
+    public IRebateCalculator Get(IncentiveType type)
         => _map.TryGetValue(type, out var c) ? c : null;
 }
